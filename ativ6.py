@@ -2,8 +2,8 @@ import ativ6
 gerenciamento = ativ6.GerenciadorDeTarefas(adic = None,
                                            remov = None,
                                            feito = None,
-                                           fazer = [],
-                                           atvFeitas = [])
+                                           tarefas = [],
+                                           tarefasFeitas = [])
 
 op = 0
 while op !=5:
@@ -16,7 +16,7 @@ while op !=5:
 
     if op == 1:
         print(f'Atividades para serem feitas: {gerenciamento.fazer}\n',
-              f'Atividades concluídas {gerenciamento.AtvFeitas}')
+              f'Atividades concluídas {gerenciamento.tarefasFeitas}')
     #op 1
     if op == 2:
         gerenciamento.adic = input('Digite a tarefa: ')
@@ -33,7 +33,7 @@ while op !=5:
         gerenciamento.remov = gerenciamento.remov.upper()
 
         if gerenciamento.remover in gerenciamento.tarefas:
-            gerenciamento.removAtividade(gerenciamento.remov)
+            gerenciamento.removerTarefa(gerenciamento.remov)
             print(f'{gerenciamento.remover} foi excluído da sua lista de atividades')
         else:
             print(f'A atividade {gerenciamento.remov} não existe')
@@ -51,7 +51,6 @@ while op !=5:
     if op < 1 or op > 5:
         print('Opção inválida! Tente novamente')
 #while
-
         
             
 
